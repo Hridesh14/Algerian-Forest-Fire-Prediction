@@ -2,7 +2,6 @@
 
 A **real-time Fire Weather Index (FWI) prediction web application** built with **Flask**, **Scikit-learn**, and **Ridge Regression**. Uses the **Algerian Forest Fires Dataset** to predict fire danger based on weather and fuel conditions.
 
-Live Demo: [https://your-app.onrender.com](https://your-app.onrender.com) *(replace with your link)*
 
 ---
 
@@ -102,4 +101,5 @@ DMC,7.3
 ISI,2.3
 Fire Status,not fire
 Region,Bejaia , Sidi Bel-abbes 
+
 
