@@ -71,6 +71,13 @@ Algerian-Forest-Fire-Prediction/
 ├── requirements.txt
 └── README.md
 
+## My Role
+- Data preprocessing & EDA
+- Model selection (Ridge > Lasso > Linear)
+- Flask backend with prediction pipeline
+- Full frontend design (with AI-assisted prototyping)
+- Deployment-ready with `requirements.txt`
+
 ---
 
 ## How to Run Locally
@@ -100,12 +107,11 @@ FFMC,79.9
 DMC,7.3
 ISI,2.3
 Fire Status,not fire
-Region,Bejaia , Sidi Bel-abbes 
-## My Role
-- Data preprocessing & EDA
-- Model selection (Ridge > Lasso > Linear)
-- Flask backend with prediction pipeline
-- Full frontend design (with AI-assisted prototyping)
-- Deployment-ready with `requirements.txt`
+Region,Bejaia , Sidi Bel-abbes.
+
+
+
+
+
 
 
