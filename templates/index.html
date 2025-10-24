@@ -1,1 +1,217 @@
-<h1> Welcome to the Home Page </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algerian Forest Fire Prediction | FWI Forecast</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.cssPhotography
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        :root {
+            --fire-orange: #ff6b35;
+            --fire-red: #f44336;
+            --smoke-gray: #2c3e50;
+            --bg-gradient: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ff6b35" opacity="0.3"><animate attributeName="r" values="2;5;2" dur="3s" repeatCount="indefinite"/></circle><circle cx="20" cy="30" r="1.5" fill="%23f44336" opacity="0.4"><animate attributeName="r" values="1.5;4;1.5" dur="2.5s" repeatCount="indefinite"/></circle><circle cx="80" cy="70" r="2" fill="%23fdbb2d" opacity="0.2"><animate attributeName="r" values="2;6;2" dur="4s" repeatCount="indefinite"/></circle></svg>') repeat;
+            animation: float 20s infinite linear;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-100px) translateX(100px); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            margin-bottom: 1rem;
+        }
+
+        .hero p.lead {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background: var(--fire-orange);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-cta:hover {
+            background: #e55a2b;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 107, 53, 0.6);
+        }
+
+        .stats {
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 900px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            color: var(--fire-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        .fire-icon {
+            font-size: 5rem;
+            color: var(--fire-orange);
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0,0,0,0.3);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .stats { padding: 1.5rem; }
+            .stat-item h3 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="animate__animated animate__fadeInDown">
+                <i class="fas fa-fire fire-icon"></i>
+                <h1>Algerian Forest Fire Prediction</h1>
+                <p class="lead">
+                    Predict <strong>Fire Weather Index (FWI)</strong> in real-time using machine learning. 
+                    Powered by Ridge Regression and trained on Bejaia & Sidi Bel-abbes fire data.
+                </p>
+                <a href="/predictdata" class="btn btn-cta">
+                    <i class="fas fa-bolt"></i> Predict FWI Now
+                </a>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                <div class="row">
+                    <div class="col-md-3 col-6 stat-item">
+                        <i class="fas fa-database"></i>
+                        <h3>244</h3>
+                        <p>Data Points</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>2</h3>
+                        <p>Regions</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <i class="fas fa-fire"></i>
+                        <h3>138</h3>
+                        <p>Fire Events</p>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <i class="fas fa-brain"></i>
+                        <h3>Ridge</h3>
+                        <p>Best Model</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Algerian Forest Fire Prediction | Built with 
+            <i class="fas fa-heart text-danger"></i> using Flask + Scikit-learn
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
