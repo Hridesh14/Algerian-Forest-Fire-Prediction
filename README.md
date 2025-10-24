@@ -101,4 +101,5 @@ FFMC,79.9
 DMC,7.3
 ISI,2.3
 Fire Status,not fire
-Region,Bejaia
+Region,Bejaia , Sidi Bel-abbes 
+
